@@ -43,26 +43,26 @@ end
 class BookInStock
   def initialize(isbn, price)  
       if isbn.empty?
-         raise(ArgumentError, "isbn can't be empty")
+         raise(ArgumentError)
       elsif price <= 0
-          raise(ArgumentError, "price can't be less than 0")
+          raise(ArgumentError)
       end
       @isbn = isbn
       @price = price
   end
-    def isbn= isbn 
-      @isbn = isbn
-    end
-    def price= price
-      @price = price
-    end
-    def isbn
-      @isbn
-    end
-    def price
-      @price
-    end
-    def price_as_string
-        return "$%.2f" % self.price
-    end 
+  def isbn= isbn 
+    @isbn = isbn
+  end
+  def price= price
+    @price = price
+  end
+  def isbn
+    @isbn
+  end
+  def price
+    @price
+  end
+  def price_as_string
+    "$%.2f" % self.price
+  end 
 end
